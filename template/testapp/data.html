@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{%extends 'testapp/base.html'%}
+{%block body_block%}
+{%load cust_filters%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data</title>
+</head>
+<body>
+<table border="3">
+    <thead>
+    <th>name</th>
+    <th>roll</th>
+    <th>city</th>
+    <th>feedback</th>
+    </thead>
+    {%for i in data%}
+    <tr>
+
+        <td>
+            {{i.name|upper}}
+        </td>
+        <td>
+            {{i.roll}}
+        </td>
+        <td>
+            {{i.city|title}}
+        </td>
+        <td>
+            {{i.feedbackform|nlm:100}}
+        </td>
+
+    </tr>
+    {%endfor%}
+</table>
+
+</body>
+</html>
+{%endblock%}
